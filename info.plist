@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>antidote.irwinj.blogspot.com</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3FF52A7D-7056-46BB-8121-954DE3715758</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEC253EB-19B5-4095-B57C-2701C99802FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Jason Irwin</string>
+	<key>description</key>
+	<string>Alfred workflow for Antidote 10</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Antidote 10</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
+delay 0.3
+
+-- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
+
+-- Wait 1/3 of a second. Change this to larger value if it behaves strangely
+delay 0.3
+
+-- Emulate the return button being hit
+key code 36
+
+-- Select Dictionaries on the left hand side
+select row 1 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
+end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>def</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Define '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
+delay 0.3
+
+-- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
+
+-- Wait 1/3 of a second. Change this to larger value if it behaves strangely
+delay 0.3
+
+-- Emulate the return button being hit
+key code 36
+
+-- Select Synonyms on the left hand side
+select row 2 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
+end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>syn</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Synonyms of '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
+delay 0.3
+
+-- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
+
+-- Wait 1/3 of a second. Change this to larger value if it behaves strangely
+delay 0.3
+
+-- Emulate the return button being hit
+key code 36
+
+-- Select Dictionaries on the left hand side
+select row 3 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
+end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CEC253EB-19B5-4095-B57C-2701C99802FF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ant</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Antonyms of '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3FF52A7D-7056-46BB-8121-954DE3715758</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Created with the help of UI Browser. UI selection is a bit of an ugly hack but without another option this should work OK. Modify the delay line in each workflow if things start to act strangely.</string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>3FF52A7D-7056-46BB-8121-954DE3715758</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>CEC253EB-19B5-4095-B57C-2701C99802FF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0.0</string>
+	<key>webaddress</key>
+	<string>irwinj.blogspot.com</string>
+</dict>
+</plist>
