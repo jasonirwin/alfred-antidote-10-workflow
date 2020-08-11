@@ -47,6 +47,45 @@
 		</array>
 		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
 		<array/>
+		<key>817BEBAC-1CE3-4684-9C8C-7CE4E31FED63</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEC253EB-19B5-4095-B57C-2701C99802FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A384D7A3-8835-4A49-B1A6-000B51E38FD5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D7393DEB-F36D-437A-8376-19B3E27756C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Jason Irwin</string>
@@ -58,35 +97,6 @@
 	<string>Antidote 10</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
-delay 0.3
-
--- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
-
--- Wait 1/3 of a second. Change this to larger value if it behaves strangely
-delay 0.3
-
--- Emulate the return button being hit
-key code 36
-
--- Select Dictionaries on the left hand side
-select row 1 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
-end tellend tellend alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -104,7 +114,7 @@ select row 1 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<string>D7393DEB-F36D-437A-8376-19B3E27756C9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -112,28 +122,35 @@ select row 1 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)
-activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
-delay 0.3
-
--- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
-
--- Wait 1/3 of a second. Change this to larger value if it behaves strangely
-delay 0.3
-
--- Emulate the return button being hit
-key code 36
-
--- Select Synonyms on the left hand side
-select row 2 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
-end tellend tellend alfred_script</string>
+				<string>on alfred_script(q)	tell application "AgentAntidoteConnect"		launch module dictionaries resource definitions word q version 300	end tellend alfred_script</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</string>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>d</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Define '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -154,7 +171,7 @@ select row 2 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</string>
+			<string>A384D7A3-8835-4A49-B1A6-000B51E38FD5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -162,21 +179,64 @@ select row 2 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)
-activate application "Antidote 10"tell application "System Events"tell process "Antidote 10"
-delay 0.3
-
--- Put value in search text boxset value of text field 1 of group 3 of tool bar 1 of window "Antidote - Dictionaries"  to q
-
--- Wait 1/3 of a second. Change this to larger value if it behaves strangely
-delay 0.3
-
--- Emulate the return button being hit
-key code 36
-
--- Select Dictionaries on the left hand side
-select row 3 of table 1 of scroll area 1 of splitter group 1 of group 1 of window "Antidote - Dictionaries" 
-end tellend tellend alfred_script</string>
+				<string>on alfred_script(q)	tell application "AgentAntidoteConnect"		launch module dictionaries resource synonyms word q version 300	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>s</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Synonyms of '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ant</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Antonyms of '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>817BEBAC-1CE3-4684-9C8C-7CE4E31FED63</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "AgentAntidoteConnect"		launch module dictionaries resource antonyms word q version 300	end tellend alfred_script</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
@@ -193,7 +253,7 @@ select row 3 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>ant</string>
+				<string>a</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -216,23 +276,23 @@ select row 3 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>125</integer>
 			<key>ypos</key>
-			<real>60</real>
+			<integer>120</integer>
 		</dict>
 		<key>3FF52A7D-7056-46BB-8121-954DE3715758</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>145</integer>
 			<key>ypos</key>
-			<real>300</real>
+			<integer>605</integer>
 		</dict>
 		<key>6A0F3D27-9376-47A2-8B49-5FCFAA11F1DF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>140</integer>
 			<key>ypos</key>
-			<real>180</real>
+			<integer>365</integer>
 		</dict>
 		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
 		<dict>
@@ -241,25 +301,46 @@ select row 3 of table 1 of scroll area 1 of splitter group 1 of group 1 of windo
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
+		<key>817BEBAC-1CE3-4684-9C8C-7CE4E31FED63</key>
+		<dict>
+			<key>xpos</key>
+			<integer>135</integer>
+			<key>ypos</key>
+			<integer>485</integer>
+		</dict>
+		<key>A384D7A3-8835-4A49-B1A6-000B51E38FD5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>245</integer>
+		</dict>
 		<key>B48541C2-3FE8-4431-BB5D-6AF7EBD49C6F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>495</integer>
 			<key>ypos</key>
-			<real>180</real>
+			<integer>310</integer>
 		</dict>
 		<key>CEC253EB-19B5-4095-B57C-2701C99802FF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<real>300</real>
+			<integer>560</integer>
+		</dict>
+		<key>D7393DEB-F36D-437A-8376-19B3E27756C9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>125</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.0.0</string>
+	<string>1.0.0.1</string>
 	<key>webaddress</key>
 	<string>irwinj.blogspot.com</string>
 </dict>
